@@ -12,13 +12,23 @@
     font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,sans-serif;
 }
 
+body {
+    display: flex;
+}
+
 .container-nav {
     float: left;
-    height: 100vh;
+    min-height: 100vh;
+    transition: 250ms ease-in-out;
+    width: 60px;
+}
+
+.container-nav-showing {
+    width: 300px;
 }
 
 nav {
-    position: relative;
+    position: fixed;
     width: 60px;
     height: 60px;
     background: var(--lightgray);
@@ -157,8 +167,9 @@ footer {
 }
 
 .main-content {
+    flex-grow: 1;
     padding: 20px;
-    margin: 0 20px 57px 80px;
+    margin: 0 0 57px 0;
 }
 
 #devices {
@@ -168,7 +179,7 @@ footer {
 .device {
     position: relative;
     display: flex;
-    min-height: calc(100vh - 100px);
+    min-height: calc(100vh - 70px);
 }
 
 #neofetch {
@@ -218,4 +229,70 @@ footer {
     100% {
         bottom: 10px;
     }
+}
+
+.downloads {
+    width: clac(100% - 100px);
+    background: var(--lightgray);
+    border-radius: 50px;
+    margin: 0 50px;
+    padding: 50px;
+}
+
+.dropdown-download {
+}
+
+.collapsed-view {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.dropdown-arrow {
+    border: 0;
+    outline: none;
+    padding: 10px;
+}
+
+
+.expanded-view {
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: 250ms ease-in-out;
+}
+
+.expanded-view-showing {
+    opacity: 1;
+    max-height: 500px;
+}
+
+.rom-name-title {
+    color: #7c7c7c;
+}
+
+.rom-name {
+    font-size: 1.2em;
+}
+
+.stats {
+    display: flex;
+    flex-direction: column;
+    padding: 1em;
+}
+
+.stats > h3, h4, h5 {
+    font-weight: 400;
+}
+
+.stats > h3 {
+    font-size: 1.2em;
+}
+
+.stats > h4 {
+    margin-bottom: 1em;
+}
+
+.stats > h5 {
+    font-size: .8em;
 }

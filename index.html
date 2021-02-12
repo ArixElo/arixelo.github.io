@@ -8,7 +8,7 @@
 	<title>ArixElo Downloads</title>
 </head>
 <body>
-	<div class="container-nav"> 
+	<div class="container-nav" id="container-nav"> 
 		<nav id="menu-nav">
 			<button type="button" id="menu-switch" class="menu-toggle" onclick="toggleMenu()">
 				<div id="menu-icon" class="menu-icon"></div>
@@ -16,10 +16,10 @@
 	
 			<ul id="menu-ul">
 				<p class="menu-logo">downloads</p>
-				<li><button class="menu-button" onclick="toggleMi9T()">Xiaomi Mi 9T</button></li>
-				<li><button class="menu-button" onclick="toggleJ5()">Samsung Galaxy J5 2015</button></li>
-				<li><button class="menu-button" onclick="toggleMido()">Xiaomi Redmi Note 4</button></li>
-				<li><button class="menu-button" onclick="toggleHuawei()">Huawei P8/P9 Lite 2017</button></li>
+				<li><button class="menu-button" onclick="swapModel(0)">Xiaomi Mi 9T</button></li>
+				<li><button class="menu-button" onclick="swapModel(1)">Samsung Galaxy J5 2015</button></li>
+				<li><button class="menu-button" onclick="swapModel(2)">Xiaomi Redmi Note 4</button></li>
+				<li><button class="menu-button" onclick="swapModel(3)">Huawei P8/P9 Lite 2017</button></li>
 			</ul>
 		</nav>
 	</div>
@@ -41,6 +41,10 @@
 				</div>
 				<img class="arrow-down" src="src/svg/arrow_down.svg">
 			</div>	
+		</div>
+
+		<div class="downloads" id="downloads">
+
 		</div>
 	</div>
 
