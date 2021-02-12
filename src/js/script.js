@@ -81,7 +81,11 @@ var downloadsContainer = document.getElementById("device-display");
 
 var model = 0;
 
+if ($(document).width() > 1200) toggleMenu();
+
 swapModel(model, 1);
+
+
 
 function swapModel(number, type = 0) {
     $(window).scrollTop(0);
