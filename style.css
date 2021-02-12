@@ -1,3 +1,9 @@
+:root {
+    --white: #f8f8f2;
+    --dark: #282a36;
+    --purple: #bd93f9;
+}
+
 *, *::after, *::after {
     margin: 0;
     padding: 0;
