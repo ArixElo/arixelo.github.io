@@ -15,6 +15,23 @@ function toggleMenu() {
 function toggleDropdownRom(id) {
     var element = document.getElementById(id);
     element.classList.toggle("expanded-view-showing");
+
+    
+    console.log(dataType[model][id]);
+
+    if(dataType[model][id] == 0) {
+        $.getJSON(romLinks[model][id], function(stats) {
+            element = document.getElementById("%totaldownloadsid%" + id).innerHTML = stats.total;
+    
+            element = document.getElementById("%topgeoid%" + id).innerHTML = stats.summaries.geo.top;
+    
+            element = document.getElementById("%topoperatingosid%" + id).innerHTML = stats.summaries.os.top;
+    
+            element = document.getElementById("%statsupdatedid%" + id).innerHTML = stats.stats_updated;
+    
+        });
+    }
+
 }
 
 let names = ["Xiaomi Mi 9T", "Samsung Galaxy J5 2015", "Xiaomi Redmi Note 4", "Huawei P8/P9 Lite 2017"];
@@ -32,6 +49,15 @@ var roms = [
     ["DerpFest / AOSiP"],
     ["DerpFest", "Descendant"],
     ["AICP"]
+];
+
+// 0 = sf
+// 1 = non sf
+var dataType = [
+    [0, 1, 1, 1, 1, 1],
+    [1],
+    [1, 1],
+    [1]
 ];
 
 var romLinks = [
@@ -57,8 +83,8 @@ var model = 0;
 
 swapModel(model);
 
-function swapModel(model) {
-    model = model;
+function swapModel(number) {
+    model = number;
     devicename.innerHTML = names[model];
     devicecodename.innerHTML = codenames[model];
     devicecpu.innerHTML = cpus[model];
@@ -72,53 +98,21 @@ function swapModel(model) {
     swapRoms(model);
 }
 
-/*
-        $(".awakenTotalDownloads").html(awakenStats.total);
-
-        $(".awakenTopGeo").html(awakenStats.summaries.geo.top);
-        $(".awakenTopGeoPercent").html(" (" + awakenStats.summaries.geo.percent + "%)");
-
-        $(".awakenTopOs").html(awakenStats.summaries.os.top);
-        $(".awakenTopOsPercent").html(" (" + awakenStats.summaries.os.percent + "%)");
-
-        $(".awakenStatsUpdated").html(awakenStats.stats_updated);
-*/
-
-function fetchData(index) {
-    let data = [];
-    $.getJSON(romLinks[model][index], function(stats) {
-        console.log(stats.total);
-        data.push(stats.total);
-        data.push(stats.summaries.geo.top);
-        data.push(stats.summaries.os.top);
-        data.push(stats.stats_updated);
-    });
-
-    console.log(data);
-    return data;
-}
-
-// %romname% = rom name  
-
 function swapRoms(model) {
 
     document.getElementById('downloads').innerHTML = "";
 
     for (let i = 0; i < roms[model].length; i++) {
-        var data = fetchData(i);
-        val = '<div class="dropdown-download"><div class="collapsed-view"><div><p class="rom-name-title">rom name:</p><p class="rom-name">%romname%</p></div><button class="dropdown-arrow" onclick="toggleDropdownRom(%iddropdown%)"><img src="src/svg/arrow_down.svg"></button></div><div class="expanded-view" id="%iddropdowndiv%"><div id="shapeshift" class="stats"><h3>Downloads:</h3><h4><span class="ssosTotalDownloads">%totaldownloads%</span></h4><h3>Country with most downloads:</h3><h4><span class="ssosTopGeo">%topgeo%</span><span class="ssosTopGeoPercent"></span></h4><h3>Operating system with most downloads:</h3><h4><span class="ssosTopOs">%topoperatingos%</span><span class="ssosTopOsPercent"></span></h4><h5>Stats updated: <span class="ssosStatsUpdated">%statsupdated%</span></h5></div></div></div>';
+
+        val = '<div class="dropdown-download"><div class="collapsed-view"><div><p class="rom-name-title">rom name:</p><p class="rom-name">%romname%</p></div><button class="dropdown-arrow" onclick="toggleDropdownRom(%iddropdown%)"><img src="src/svg/arrow_down.svg"></button></div><div class="expanded-view" id="%iddropdowndiv%"><div id="shapeshift" class="stats"><h3>Downloads:</h3><h4><span class="ssosTotalDownloads" id="%totaldownloadsid%">%totaldownloads%</span></h4><h3>Country with most downloads:</h3><h4><span class="ssosTopGeo" id="%topgeoid%">%topgeo%</span><span class="ssosTopGeoPercent"></span></h4><h3>Operating system with most downloads:</h3><h4><span class="ssosTopOs" id="%topoperatingosid%">%topoperatingos%</span><span class="ssosTopOsPercent"></span></h4><h5>Stats updated: <span class="ssosStatsUpdated" id="%statsupdatedid%">%statsupdated%</span></h5></div></div></div>';
         val = val.replace("%romname%", roms[model][i]);
         val = val.replace("%iddropdown%", i);
+        val = val.replace("%totaldownloadsid%", "%totaldownloadsid%" + i);
         val = val.replace("%iddropdowndiv%", i);
-        
-        console.log(data);
-        val = val.replace("%totaldownloads%", data[0]);
-        val = val.replace("%topgeo%", data[1]);
-        //%totaldownloads%
-        //%topgeo%
-        //%topoperatingos%
-        //%statsupdated%
-    
+        val = val.replace("%topgeoid%", "%topgeoid%" + i);
+        val = val.replace("%topoperatingosid%", "%topoperatingosid%" + i);
+        val = val.replace("%statsupdatedid%", "%statsupdatedid%" + i);
+
         document.getElementById('downloads').innerHTML += val;
     }
 
