@@ -33,7 +33,6 @@ nav {
     position: fixed;
     width: 60px;
     height: 60px;
-    background: var(--lightgray);
     overflow: hidden;
     transition: 250ms ease-in-out;
     z-index: 999;
@@ -42,6 +41,7 @@ nav {
 .nav-showing {
     width: 300px;
     height: 100vh;
+    background: var(--lightgray);
 }
 
 .menu-logo {
@@ -159,10 +159,10 @@ ul li button:hover::after {
 }
 
 footer {
-    position: fixed;
     bottom: 0;
-    width: 100%;
-    padding: 20px;
+    width: fit-content;
+    margin: 0 auto;
+    padding: 20px 0 0 0;
     text-align: center;
     font-size: 0.8em;
     background: var(--white);
@@ -171,7 +171,6 @@ footer {
 .main-content {
     flex-grow: 1;
     padding: 20px;
-    margin: 0 0 57px 0;
 }
 
 #devices {
@@ -181,7 +180,8 @@ footer {
 .device {
     position: relative;
     display: flex;
-    min-height: calc(100vh - 70px);
+    min-height: calc(100vh - 20px);
+    padding: 0 0 60px 0;
 }
 
 #neofetch {
@@ -214,7 +214,7 @@ footer {
 
 .arrow-down {
     position: absolute;
-    bottom: 0;
+    bottom: 30px;
     left: 50%;
     transform: translateX(-50%);
     width: 60px !important;
@@ -229,7 +229,7 @@ footer {
     0% {
     }
     100% {
-        bottom: 10px;
+        bottom: 40px;
     }
 }
 
