@@ -90,7 +90,7 @@ function fetchData(index) {
         console.log(stats.total);
         data.push(stats.total);
         data.push(stats.summaries.geo.top);
-        data.push(stats.summaries.os.top);
+        data.push(stats.summaries.os.top + "%");
         data.push(stats.stats_updated);
     });
 
@@ -106,7 +106,7 @@ function swapRoms(model) {
 
     for (let i = 0; i < roms[model].length; i++) {
         var data = fetchData(i);
-        val = '<div class="dropdown-download"><div class="collapsed-view"><div><p class="rom-name-title">rom name:</p><p class="rom-name">%romname%</p></div><button class="dropdown-arrow" onclick="toggleDropdownRom(%iddropdown%)"><img src="src/svg/arrow_down.svg"></button></div><div class="expanded-view" id="%iddropdowndiv%"><div id="shapeshift" class="stats"><h3>Downloads:</h3><h4><span class="ssosTotalDownloads">%totaldownloads%</span></h4><h3>Country with most downloads:</h3><h4><span class="ssosTopGeo">%topgeo%</span><span class="ssosTopGeoPercent"></span></h4><h3>Operating system with most downloads:</h3><h4><span class="ssosTopOs">%topoperatingos%</span><span class="ssosTopOsPercent"></span></h4><h5>Stats updated: <span class="ssosStatsUpdated">%statsupdated%</span></h5></div></div></div>';
+        val = '<div class="dropdown-download"><div class="collapsed-view"><div style="margin-bottom: 1em;"><p class="rom-name-title">rom name:</p><p class="rom-name">%romname%</p></div><button class="dropdown-arrow" onclick="toggleDropdownRom(%iddropdown%)"><img src="src/svg/arrow_down.svg"></button></div><div class="expanded-view" id="%iddropdowndiv%"><div id="shapeshift" class="stats"><h3>Downloads:</h3><h4><span class="ssosTotalDownloads">%totaldownloads%</span></h4><h3>Country with most downloads:</h3><h4><span class="ssosTopGeo">%topgeo%</span><span class="ssosTopGeoPercent"></span></h4><h3>Operating system with most downloads:</h3><h4><span class="ssosTopOs">%topoperatingos%</span><span class="ssosTopOsPercent"></span></h4><h5>Stats updated: <span class="ssosStatsUpdated">%statsupdated%</span></h5></div></div></div>';
         val = val.replace("%romname%", roms[model][i]);
         val = val.replace("%iddropdown%", i);
         val = val.replace("%iddropdowndiv%", i);
