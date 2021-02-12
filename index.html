@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="style.css">
+	<title>ArixElo Downloads</title>
+</head>
+<body>
+	<div class="container-nav" id="container-nav"> 
+		<nav id="menu-nav">
+			<button type="button" id="menu-switch" class="menu-toggle" onclick="toggleMenu()">
+				<div id="menu-icon" class="menu-icon"></div>
+			</button>
+	
+			<ul id="menu-ul">
+				<p class="menu-logo">downloads</p>
+				<li><button class="menu-button" onclick="swapModel(0)">Xiaomi Mi 9T</button></li>
+				<li><button class="menu-button" onclick="swapModel(1)">Samsung Galaxy J5 2015</button></li>
+				<li><button class="menu-button" onclick="swapModel(2)">Xiaomi Redmi Note 4</button></li>
+				<li><button class="menu-button" onclick="swapModel(3)">Huawei P8/P9 Lite 2017</button></li>
+			</ul>
+		</nav>
+	</div>
+
+	<div class="main-content">
+		<div id="device">
+			<div id="davinci" class="device">
+				<img src="src/img/pixel5.png">
+				<div id="neofetch">
+					<feature>Model</feature><h1 id="device-name">null</h1>
+					<feature>Codename</feature><spec id="device-codename">null</spec>
+					<feature>CPU</feature><spec id="device-cpu">null</spec>
+					<feature>GPU</feature><spec id="device-gpu">null</spec>
+					<feature>Memory</feature><spec id="device-memory">null</spec>
+					<feature>Shipped Software</feature><spec id="device-soft">null</spec>
+					<feature>Storage</feature><spec id="device-storage">null</spec>
+					<feature>Battery</feature><spec id="device-battery">null</spec>
+					<feature>Display</feature><spec id="device-display">null</spec>
+				</div>
+				<img class="arrow-down" src="src/svg/arrow_down.svg">
+			</div>	
+		</div>
+
+		<div class="downloads" id="downloads">
+
+		</div>
+	</div>
+
+	<footer>Made with <span>&#128151;</span> by <a href="https://github.com/00day0/">cfdddd</a> and <a href="https://github.com/ejbtrd">ejbtrd</a>.</footer>
+
+	<script src="script.js"></script>
+</body>
+</html>

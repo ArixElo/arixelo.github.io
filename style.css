@@ -1,0 +1,298 @@
+:root {
+    --white: #f8f8f2;
+    --dark: #282a36;
+    --purple: #bd93f9;
+    --lightgray: rgb(240,240,240);
+}
+
+*, *::after, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,sans-serif;
+}
+
+body {
+    display: flex;
+}
+
+.container-nav {
+    float: left;
+    min-height: 100vh;
+    transition: 250ms ease-in-out;
+    width: 60px;
+}
+
+.container-nav-showing {
+    width: 300px;
+}
+
+nav {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    background: var(--lightgray);
+    overflow: hidden;
+    transition: 250ms ease-in-out;
+    z-index: 999;
+}
+
+.nav-showing {
+    width: 300px;
+    height: 100vh;
+}
+
+.menu-logo {
+    text-align: center;
+    font-size: 25px;
+    padding: 20px;
+}
+
+ul {
+    list-style: none;
+    width: 300px;
+    opacity: 0;
+    transition: 150ms ease-in-out;
+}
+
+@media only screen and (max-width: 600px) {
+    .nav-showing, ul {
+      width: 100vw;
+    }
+}
+
+ul li button {
+    text-decoration: none;
+    color: #000;
+    display: flex;
+    padding: 20px 20px;
+    position: relative;
+    outline: none;
+    border: 0;
+    width: 100%;
+}
+
+ul li button::after {
+    content: "";
+    bottom: 5px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #000;
+    width: 0px;
+    height: 2px;
+    border-radius: 5px;
+    transition: 250ms ease-in-out;
+    opacity: .3;
+}
+
+ul li button:hover::after {
+    width: 200px;
+}
+
+.ul-showing {
+    opacity: 1;
+}
+
+.menu-toggle {
+    height: 40px;
+    width: 40px;
+    border: 0;
+    margin: 10px;
+    position: relative;
+    cursor: pointer;
+    outline: none;
+    background: none;
+}
+
+.menu-icon {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 3px;
+    border-radius: 10px;
+    background: #000;
+    transition: 150ms ease-in-out;
+}
+
+.menu-icon::after {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: 0;
+    width: 40px;
+    height: 3px;
+    border-radius: 10px;
+    background: #000;
+}
+
+.menu-icon::before {
+    content: "";
+    position: absolute;
+    top: 10px;
+    left: 0;
+    width: 40px;
+    height: 3px;
+    border-radius: 10px;
+    background: #000;
+}
+
+.menu-icon-opened {
+    width: 0px;
+}
+.menu-icon-opened::after {
+    top: 50%;
+    left: 50%;
+    transform: rotate(45deg);
+    transition: 150ms ease-in-out;
+}
+
+.menu-icon-opened::before {
+    top: 50%;
+    left: 50%;
+    transform: rotate(-45deg);
+    transition: 150ms ease-in-out;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+    font-size: 0.8em;
+    background: #fff;
+}
+
+.main-content {
+    flex-grow: 1;
+    padding: 20px;
+    margin: 0 0 57px 0;
+}
+
+#devices {
+    width: inherit;
+}
+
+.device {
+    position: relative;
+    display: flex;
+    min-height: calc(100vh - 70px);
+}
+
+#neofetch {
+    padding: 2em 0;
+    width: inherit;
+    display: flex;
+    flex-direction: column;
+    margin: auto auto auto 1em;
+}
+
+#neofetch > feature {
+    font-size: 1.2em;
+    color: #7c7c7c;
+}
+
+#neofetch > spec {
+    margin-bottom: 1em;
+    font-weight: 600;
+}
+
+#davinci > img {
+    height: 30vw;
+    width: auto;
+    margin: auto 1em auto auto;
+}
+
+#device-name {
+    margin-bottom: 10px;
+}
+
+.arrow-down {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px !important;
+    height: 60px !important;
+    animation: bouncing;
+    animation-duration: 200ms;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@keyframes bouncing {
+    0% {
+    }
+    100% {
+        bottom: 10px;
+    }
+}
+
+.downloads {
+    width: clac(100% - 100px);
+    background: var(--lightgray);
+    border-radius: 50px;
+    margin: 0 50px;
+    padding: 50px;
+}
+
+.dropdown-download {
+}
+
+.collapsed-view {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.dropdown-arrow {
+    border: 0;
+    outline: none;
+    padding: 10px;
+}
+
+
+.expanded-view {
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: 250ms ease-in-out;
+}
+
+.expanded-view-showing {
+    opacity: 1;
+    max-height: 500px;
+}
+
+.rom-name-title {
+    color: #7c7c7c;
+}
+
+.rom-name {
+    font-size: 1.2em;
+}
+
+.stats {
+    display: flex;
+    flex-direction: column;
+    padding: 1em;
+}
+
+.stats > h3, h4, h5 {
+    font-weight: 400;
+}
+
+.stats > h3 {
+    font-size: 1.2em;
+}
+
+.stats > h4 {
+    margin-bottom: 1em;
+}
+
+.stats > h5 {
+    font-size: .8em;
+}
