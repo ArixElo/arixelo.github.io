@@ -1,4 +1,4 @@
-@media (prefers-color-scheme: light) {
+/*@media (prefers-color-scheme: light) {
     :root {
         --background: #fff;
         --foreground: rgb(240,240,240);
@@ -16,6 +16,22 @@
     
         --link: #6272a4;
     }
+}*/
+
+:root {
+    --link: #6272a4;
+}
+
+#dark-mode-switch {
+    border: 0;
+    margin: 10px;
+    position: relative;
+    float: right;
+    cursor: pointer;
+    outline: none;
+    background: none;
+    user-select: none;
+    transition: 0.3s ease;
 }
 
 *, *::after, *::after {
@@ -38,7 +54,7 @@ body {
 .container-nav {
     float: left;
     min-height: 100vh;
-    transition: 250ms ease-in-out;
+    transition: 0.3s ease-in-out;
     width: 60px;
 }
 
@@ -51,7 +67,7 @@ nav {
     width: 60px;
     height: 60px;
     overflow: hidden;
-    transition: 250ms ease-in-out;
+    transition: 0.3s ease-in-out;
     z-index: 999;
 }
 
@@ -76,7 +92,7 @@ ul {
     list-style: none;
     width: 300px;
     opacity: 0;
-    transition: 150ms ease-in-out;
+    transition: 0.2s ease-in-out;
 }
 
 @media only screen and (max-width: 600px) {
@@ -107,7 +123,7 @@ ul li button::after {
     width: 0px;
     height: 2px;
     border-radius: 5px;
-    transition: 250ms ease-in-out;
+    transition: 0.3s ease-in-out;
     opacity: .3;
 }
 
@@ -139,7 +155,7 @@ ul li button:hover::after {
     height: 3px;
     border-radius: 10px;
     background: var(--font);
-    transition: 150ms ease-in-out;
+    transition: 0.2s ease-in-out;
 }
 
 .menu-icon::after {
@@ -171,14 +187,14 @@ ul li button:hover::after {
     top: 50%;
     left: 50%;
     transform: rotate(45deg);
-    transition: 150ms ease-in-out;
+    transition: 0.2s ease-in-out;
 }
 
 .menu-icon-opened::before {
     top: 50%;
     left: 50%;
     transform: rotate(-45deg);
-    transition: 150ms ease-in-out;
+    transition: 0.2s ease-in-out;
 }
 
 footer {
@@ -297,7 +313,7 @@ a:hover, a:active {
     opacity: 0;
     max-height: 0;
     overflow: hidden;
-    transition: 250ms ease-in-out;
+    transition: 0.3s ease-in-out;
 }
 
 .expanded-view-showing {
