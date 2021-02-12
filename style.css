@@ -18,11 +18,13 @@
 }
 
 nav {
+    position: relative;
     width: 60px;
     height: 60px;
     background: var(--lightgray);
     overflow: hidden;
     transition: 250ms ease-in-out;
+    z-index: 999;
 }
 
 .nav-showing {
@@ -142,12 +144,13 @@ ul li a:hover::after {
 }
 
 footer {
-    position: absolute;
+    position: fixed;
     bottom: 0;
     width: 100%;
-    margin: 1em auto;
+    padding: 20px;
     text-align: center;
     font-size: 0.8em;
+    background: #fff;
 }
 
 .main-content {
