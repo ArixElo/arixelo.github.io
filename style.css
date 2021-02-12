@@ -29,6 +29,10 @@ body {
     display: flex;
     color: var(--font);
     background-color: var(--background);
+
+    transition:
+        color 0.5s ease,
+        background-color 0.5s ease;
 }
 
 .container-nav {
