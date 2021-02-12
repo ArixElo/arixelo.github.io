@@ -1,5 +1,5 @@
 :root {
-    --white: #f8f8f2;
+    --white: #fff;
     --dark: #282a36;
     --purple: #bd93f9;
     --lightgray: rgb(240,240,240);
@@ -14,6 +14,8 @@
 
 body {
     display: flex;
+    color: var(--dark);
+    background-color: var(--white);
 }
 
 .container-nav {
@@ -63,7 +65,7 @@ ul {
 
 ul li button {
     text-decoration: none;
-    color: #000;
+    color: var(--dark);
     display: flex;
     padding: 20px 20px;
     position: relative;
@@ -78,7 +80,7 @@ ul li button::after {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    background: #000;
+    background: var(--dark);
     width: 0px;
     height: 2px;
     border-radius: 5px;
@@ -113,7 +115,7 @@ ul li button:hover::after {
     width: 40px;
     height: 3px;
     border-radius: 10px;
-    background: #000;
+    background: var(--dark);
     transition: 150ms ease-in-out;
 }
 
@@ -125,7 +127,7 @@ ul li button:hover::after {
     width: 40px;
     height: 3px;
     border-radius: 10px;
-    background: #000;
+    background: var(--dark);
 }
 
 .menu-icon::before {
@@ -136,7 +138,7 @@ ul li button:hover::after {
     width: 40px;
     height: 3px;
     border-radius: 10px;
-    background: #000;
+    background: var(--dark);
 }
 
 .menu-icon-opened {
@@ -163,7 +165,7 @@ footer {
     padding: 20px;
     text-align: center;
     font-size: 0.8em;
-    background: #fff;
+    background: var(--white);
 }
 
 .main-content {
@@ -237,9 +239,6 @@ footer {
     border-radius: 50px;
     margin: 0 50px;
     padding: 50px;
-}
-
-.dropdown-download {
 }
 
 .collapsed-view {
