@@ -35,14 +35,14 @@ function toggleDropdownRom(id) {
 }
 
 let names = ["Xiaomi Mi 9T", "Samsung Galaxy J5 2015", "Xiaomi Redmi Note 4", "Huawei P8/P9 Lite 2017"];
-let codenames = ["davinci", "SM-J500F", "mido", ""];
-let cpus = ["Octa-core Qualcomm Snapdragon 730", "Qualcomm Snapdragon 410", "Qualcomm Snapdragon 625", "HiSilicon Kirin 655"];
-let gpus = ["Adreno 540", "Adreno 306", "Adreno 506", "Mali-T830MP2"];
-let memory = ["6 GB / 8 GB", "1.5 GB", "2 GB / 3 GB / 4 GB", "3 GB / 4 GB"];
-let shippedsoft = ["Android 9, MIUI 10", "Android 5.1 Lollipop", "Android 6.0 Marshmallow", "Android 7.0 Nougat"];
+let codenames = ["davinci", "j5nlte", "mido", "prague/hi6250"];
+let cpus = ["Qualcomm Snapdragon 730, SDM730", "Qualcomm Snapdragon 410, MSM8916", "Qualcomm Snapdragon 625, MSM8953", "HiSilicon Kirin 655, Hi6250"];
+let gpus = ["Adreno 618", "Adreno 306", "Adreno 506", "Mali-T830MP2"];
+let memory = ["6 GB", "1.5 GB", "2 GB / 3 GB / 4 GB", "3 GB / 4 GB"];
+let shippedsoft = ["Android 9, MIUI 10", "Android 5.1 Lollipop, TouchWiz", "Android 6.0 Marshmallow, MIUI 8", "Android 7.0 Nougat, EMUI 5"];
 let storage = ["64 GB / 128 GB", "8 GB", "32 GB / 64 GB", "16 GB / 32 GB"];
 let battery = ["4000 mAh", "2600 mAh", "4100 mAh", "3000 mAh"];
-let display = ["6.39 inches OLED", "5.00 inch AMOLED", "5.50 inches IPS", "5.20 inches IPS"];
+let display = ["6.39 inches AMOLED", "5.00 inches AMOLED", "5.50 inches IPS", "5.20 inches IPS"];
 
 var roms = [
     ["ShapeShiftOS", "Extended-UI", "LegionOS", "AwakenOS", "PixelExtended", "AOSP-Extneded"],
