@@ -5,7 +5,6 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="style.css">
-	<script src="script.js"></script>
 	<title>ArixElo Downloads</title>
 </head>
 <body>
@@ -17,51 +16,36 @@
 	
 			<ul id="menu-ul">
 				<p class="menu-logo">downloads</p>
-				<li><a href="#">Samsung Galaxy J5 2015</a></li>
-				<li><a href="#">Xiaomi Redmi Note 4</a></li>
-				<li><a href="#">Huawei P8/P9 Lite 2017</a></li>
-				<li><a href="#">Xiaomi Mi 9T</a></li>
+				<li><button class="menu-button" onclick="toggleMi9T()">Xiaomi Mi 9T</button></li>
+				<li><button class="menu-button" onclick="toggleJ5()">Samsung Galaxy J5 2015</button></li>
+				<li><button class="menu-button" onclick="toggleMido()">Xiaomi Redmi Note 4</button></li>
+				<li><button class="menu-button" onclick="toggleHuawei()">Huawei P8/P9 Lite 2017</button></li>
 			</ul>
 		</nav>
 	</div>
 
 	<div class="main-content">
-		<h1>ARIX ELO</h1>
-		<h1>ARIX ELO</h1>
-		<h1>ARIX ELO</h1>
-		<h1>ARIX ELO</h1>
-		<h1>ARIX ELO</h1>
-		<h1>ARIX ELO</h1>
-		v
-		<h1>ARIX ELO</h1>
-		v
-		<h1>ARIX ELO</h1>
-		<h1>ARIX ELO</h1>
-		<h1>ARIX ELO</h1>
-		<h1>ARIX ELO</h1>
-		v
-		<h1>ARIX ELO</h1>
-		<h1>ARIX ELO</h1>
-		<h1>ARIX ELO</h1>
-	</div>
-
-	<div id="device">
-		<h3>Mi 10T</h3>
-		<div id="davinci" class="device">
-			<img src="src/img/pixel5.png">
-			<div id="neofetch">
-				<feature>Model</feature><spec>Xiaomi Mi 10T</spec>
-				<feature>Codename</feature><spec>apollo</spec>
-				<feature>CPU</feature><spec>Octa-core Qualcomm SM8250 Snapdragon 865</spec>
-				<feature>GPU</feature><spec>Adreno 650</spec>
-				<feature>Memory</feature><spec>6 GB / 8 GB</spec>
-				<feature>Shipped Software</feature><spec>Android 10, MIUI 12</spec>
-				<feature>Storage</feature><spec>128 GB / 256 GB</spec>
-				<feature>Battery</feature><spec>5000 mAh</spec>
-				<feature>Display</feature><spec>6.67 inches, 107.4 cm2 (~85.2% screen-to-body ratio)</spec>
-			</div>
+		<div id="device">
+			<div id="davinci" class="device">
+				<img src="src/img/pixel5.png">
+				<div id="neofetch">
+					<feature>Model</feature><h1 id="device-name">null</h1>
+					<feature>Codename</feature><spec id="device-codename">null</spec>
+					<feature>CPU</feature><spec id="device-cpu">null</spec>
+					<feature>GPU</feature><spec id="device-gpu">null</spec>
+					<feature>Memory</feature><spec id="device-memory">null</spec>
+					<feature>Shipped Software</feature><spec id="device-soft">null</spec>
+					<feature>Storage</feature><spec id="device-storage">null</spec>
+					<feature>Battery</feature><spec id="device-battery">null</spec>
+					<feature>Display</feature><spec id="device-display">null</spec>
+				</div>
+				<img class="arrow-down" src="src/svg/arrow_down.svg">
+			</div>	
 		</div>
 	</div>
+
 	<footer>Made with <span>&#128151;</span> by <a href="https://github.com/00day0/">cfdddd</a> and <a href="https://github.com/ejbtrd">ejbtrd</a>.</footer>
+
+	<script src="script.js"></script>
 </body>
 </html>
