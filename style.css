@@ -1,9 +1,21 @@
-:root {
-    --white: #fff;
-    --dark: #282a36;
-    --purple: #bd93f9;
-    --link: #6272a4;
-    --lightgray: rgb(240,240,240);
+@media (prefers-color-scheme: light) {
+    :root {
+        --background: #fff;
+        --foreground: rgb(240,240,240);
+        --font: #282a36;
+    
+        --link: #6272a4;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --background: rgb(24, 26, 27);
+        --foreground: rgb(32, 35, 37);
+        --font: rgb(202, 198, 191);
+    
+        --link: #6272a4;
+    }
 }
 
 *, *::after, *::after {
@@ -15,8 +27,8 @@
 
 body {
     display: flex;
-    color: var(--dark);
-    background-color: var(--white);
+    color: var(--font);
+    background-color: var(--background);
 }
 
 .container-nav {
@@ -42,7 +54,7 @@ nav {
 .nav-showing {
     width: 300px;
     height: 100vh;
-    background: var(--lightgray);
+    background: var(--foreground);
 }
 
 .menu-logo {
@@ -71,7 +83,8 @@ ul {
 
 ul li button {
     text-decoration: none;
-    color: var(--dark);
+    color: var(--font);
+    background-color: var(--foreground);
     display: flex;
     padding: 20px 20px;
     position: relative;
@@ -86,7 +99,7 @@ ul li button::after {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    background: var(--dark);
+    background: var(--font);
     width: 0px;
     height: 2px;
     border-radius: 5px;
@@ -121,7 +134,7 @@ ul li button:hover::after {
     width: 40px;
     height: 3px;
     border-radius: 10px;
-    background: var(--dark);
+    background: var(--font);
     transition: 150ms ease-in-out;
 }
 
@@ -133,7 +146,7 @@ ul li button:hover::after {
     width: 40px;
     height: 3px;
     border-radius: 10px;
-    background: var(--dark);
+    background: var(--font);
 }
 
 .menu-icon::before {
@@ -144,7 +157,7 @@ ul li button:hover::after {
     width: 40px;
     height: 3px;
     border-radius: 10px;
-    background: var(--dark);
+    background: var(--font);
 }
 
 .menu-icon-opened {
@@ -171,13 +184,13 @@ footer {
     padding: 20px 0 0 0;
     text-align: center;
     font-size: 0.8em;
-    background: var(--white);
+    background: var(--background);
 }
 
 a {
     color: var(--link);
     text-decoration: none;
-    border-bottom: 1px solid var(--white);
+    border-bottom: 1px solid var(--background);
     transition: border-bottom 0.3s ease-out;
 }
 
@@ -238,6 +251,7 @@ a:hover, a:active {
     transform: translateX(-50%);
     width: 60px !important;
     height: 60px !important;
+    font-size: 40px !important;
     animation: bouncing;
     animation-duration: 200ms;
     animation-iteration-count: infinite;
@@ -254,7 +268,7 @@ a:hover, a:active {
 
 .downloads {
     width: clac(100% - 100px);
-    background: var(--lightgray);
+    background: var(--foreground);
     border-radius: 50px;
     margin: 0 50px;
     padding: 50px;
@@ -271,8 +285,9 @@ a:hover, a:active {
     outline: none;
     padding: 10px;
     cursor: pointer;
+    color: var(--font);
+    background-color: var(--foreground);
 }
-
 
 .expanded-view {
     opacity: 0;
