@@ -81,9 +81,13 @@ var downloadsContainer = document.getElementById("device-display");
 
 var model = 0;
 
-swapModel(model);
+swapModel(model, 1);
 
-function swapModel(number) {
+function swapModel(number, type = 0) {
+    $(window).scrollTop(0);
+    if (type==0) {
+        if ($(document).width() < 830) toggleMenu();
+    }
     model = number;
     devicename.innerHTML = names[model];
     devicecodename.innerHTML = codenames[model];
@@ -94,7 +98,6 @@ function swapModel(number) {
     devicestorage.innerHTML = storage[model];
     devicebattery.innerHTML = battery[model];
     devicedisplay.innerHTML = display[model];
-
     swapRoms(model);
 }
 

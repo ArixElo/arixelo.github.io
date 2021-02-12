@@ -25,8 +25,10 @@
 #dark-mode-switch {
     border: 0;
     margin: 10px;
-    position: relative;
-    float: right;
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    z-index: 9999999;
     cursor: pointer;
     outline: none;
     background: none;
@@ -53,22 +55,30 @@ body {
 
 .container-nav {
     float: left;
-    min-height: 100vh;
+    height: 60px;
     transition: 0.3s ease-in-out;
     width: 60px;
 }
 
 .container-nav-showing {
     width: 300px;
+    min-height: 100vh;
 }
 
 nav {
+    background: var(--background);
     position: fixed;
     width: 60px;
     height: 60px;
     overflow: hidden;
     transition: 0.3s ease-in-out;
     z-index: 999;
+}
+
+@media only screen and (max-width: 768px) {
+    nav {
+        width: 100%;
+    }
 }
 
 .nav-showing {
@@ -95,9 +105,18 @@ ul {
     transition: 0.2s ease-in-out;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 830px) {
+    .container-nav {
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+}
+
+@media only screen and (max-width: 768px) {
     .nav-showing, ul {
-      width: 100vw;
+      width: 100%;
     }
 }
 
@@ -151,7 +170,7 @@ ul li button:hover::after {
     top: 50%;
     left: 0;
     transform: translateY(-50%);
-    width: 40px;
+    width: 30px;
     height: 3px;
     border-radius: 10px;
     background: var(--font);
@@ -163,7 +182,7 @@ ul li button:hover::after {
     position: absolute;
     top: -10px;
     left: 0;
-    width: 40px;
+    width: 30px;
     height: 3px;
     border-radius: 10px;
     background: var(--font);
@@ -174,7 +193,7 @@ ul li button:hover::after {
     position: absolute;
     top: 10px;
     left: 0;
-    width: 40px;
+    width: 30px;
     height: 3px;
     border-radius: 10px;
     background: var(--font);
@@ -238,7 +257,6 @@ a:hover, a:active {
 
 #neofetch {
     padding: 2em 0;
-    width: 30%;
     display: flex;
     flex-direction: column;
     margin: auto auto auto 1em;
@@ -273,7 +291,7 @@ a:hover, a:active {
     height: 60px !important;
     font-size: 40px !important;
     animation: bouncing;
-    animation-duration: 200ms;
+    animation-duration: 300ms;
     animation-iteration-count: infinite;
     animation-direction: alternate;
 }
@@ -282,7 +300,7 @@ a:hover, a:active {
     0% {
     }
     100% {
-        bottom: 40px;
+        bottom: 20px;
     }
 }
 
@@ -292,6 +310,38 @@ a:hover, a:active {
     border-radius: 50px;
     margin: 0 50px;
     padding: 50px;
+}
+
+@media only screen and (max-width: 768px) {
+    .device {
+        flex-direction: column;
+    }
+
+    .arrow-down {
+        margin: 0 auto;
+        font-size: 40px !important;
+        animation: bouncing;
+        animation-duration: 300ms;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+    }
+
+    .downloads {
+        padding: 30px;
+        margin: 0;
+    }
+
+    #neofetch {
+        width: 100%;
+        padding: 0 10px;
+        margin: 0;
+    }
+
+    #davinci > img {
+        height: 30vw;
+        width: auto;
+        margin: 40px auto 20px auto;
+    }
 }
 
 .collapsed-view {
