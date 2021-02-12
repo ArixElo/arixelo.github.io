@@ -34,6 +34,12 @@ var roms = [
     ["AICP"]
 ];
 
+var romLinks = [
+    ["https://sourceforge.net/projects/shapeshiftos/files/davinci/stats/json?start_date=2000-01-01&end_date=2099-01-01", "Extended-UI", "LegionOS", "AwakenOS", "PixelExtended", "AOSP-Extneded"],
+    ["DerpFest / AOSiP"],
+    ["DerpFest", "Descendant"],
+    ["AICP"]
+];
 
 var devicename = document.getElementById("device-name");
 var devicecodename = document.getElementById("device-codename");
@@ -47,7 +53,7 @@ var devicedisplay = document.getElementById("device-display");
 
 var downloadsContainer = document.getElementById("device-display");
 
-var model = 1;
+var model = 0;
 
 swapModel(model);
 
@@ -66,6 +72,32 @@ function swapModel(model) {
     swapRoms(model);
 }
 
+/*
+        $(".awakenTotalDownloads").html(awakenStats.total);
+
+        $(".awakenTopGeo").html(awakenStats.summaries.geo.top);
+        $(".awakenTopGeoPercent").html(" (" + awakenStats.summaries.geo.percent + "%)");
+
+        $(".awakenTopOs").html(awakenStats.summaries.os.top);
+        $(".awakenTopOsPercent").html(" (" + awakenStats.summaries.os.percent + "%)");
+
+        $(".awakenStatsUpdated").html(awakenStats.stats_updated);
+*/
+
+function fetchData(index) {
+    let data = [];
+    $.getJSON(romLinks[model][index], function(stats) {
+        console.log(stats.total);
+        data.push(stats.total);
+        data.push(stats.summaries.geo.top);
+        data.push(stats.summaries.os.top);
+        data.push(stats.stats_updated);
+    });
+
+    console.log(data);
+    return data;
+}
+
 // %romname% = rom name  
 
 function swapRoms(model) {
@@ -73,29 +105,21 @@ function swapRoms(model) {
     document.getElementById('downloads').innerHTML = "";
 
     for (let i = 0; i < roms[model].length; i++) {
+        var data = fetchData(i);
         val = '<div class="dropdown-download"><div class="collapsed-view"><div><p class="rom-name-title">rom name:</p><p class="rom-name">%romname%</p></div><button class="dropdown-arrow" onclick="toggleDropdownRom(%iddropdown%)"><img src="src/svg/arrow_down.svg"></button></div><div class="expanded-view" id="%iddropdowndiv%"><div id="shapeshift" class="stats"><h3>Downloads:</h3><h4><span class="ssosTotalDownloads">%totaldownloads%</span></h4><h3>Country with most downloads:</h3><h4><span class="ssosTopGeo">%topgeo%</span><span class="ssosTopGeoPercent"></span></h4><h3>Operating system with most downloads:</h3><h4><span class="ssosTopOs">%topoperatingos%</span><span class="ssosTopOsPercent"></span></h4><h5>Stats updated: <span class="ssosStatsUpdated">%statsupdated%</span></h5></div></div></div>';
         val = val.replace("%romname%", roms[model][i]);
         val = val.replace("%iddropdown%", i);
         val = val.replace("%iddropdowndiv%", i);
-    
-    
+        
+        console.log(data);
+        val = val.replace("%totaldownloads%", data[0]);
+        val = val.replace("%topgeo%", data[1]);
         //%totaldownloads%
-    
         //%topgeo%
-    
-    
         //%topoperatingos%
-    
-    
         //%statsupdated%
     
         document.getElementById('downloads').innerHTML += val;
     }
 
 }
-
-
-
-
-
-
