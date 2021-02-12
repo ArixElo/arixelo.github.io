@@ -5,12 +5,17 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="style.css">
+	<script src="script.js"></script>
 	<title>ArixElo Downloads</title>
 </head>
 <body>
-	<nav>
-		<p>downloads</p>
-		<ul>
+	<nav id="menu-nav">
+		<button type="button" id="menu-switch" class="menu-toggle" onclick="toggleMenu()">
+			<div id="menu-icon" class="menu-icon"></div>
+		</button>
+
+		<ul id="menu-ul">
+			<p class="menu-logo">downloads</p>
 			<li><a href="#">Samsung Galaxy J5 2015</a></li>
 			<li><a href="#">Xiaomi Redmi Note 4</a></li>
 			<li><a href="#">Huawei P8/P9 Lite 2017</a></li>
