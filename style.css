@@ -38,13 +38,13 @@ nav {
 
 ul {
     list-style: none;
-    width: 100%;
+    width: 300px;
     opacity: 0;
     transition: 150ms ease-in-out;
 }
 
 @media only screen and (max-width: 600px) {
-    .nav-showing {
+    .nav-showing, ul {
       width: 100vw;
     }
   }
@@ -154,3 +154,35 @@ footer {
     padding: 20px;
     margin: 0 20px 0 80px;
 }
+
+#devices {
+    width: inherit;
+}
+
+.device {
+    display: flex;
+    flex-direction: row;
+}
+
+#neofetch {
+    padding: 2em 0;
+    width: inherit;
+    display: flex;
+    flex-direction: column;
+    margin: auto auto auto 1em;
+}
+
+#neofetch > feature {
+    font-size: 1.2em;
+}
+
+#neofetch > spec {
+    margin-bottom: 1em;
+}
+
+#davinci > img {
+    height: 30vw;
+    width: auto;
+    margin: auto 1em auto auto;
+}
+
