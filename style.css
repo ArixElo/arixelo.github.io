@@ -408,6 +408,8 @@ footer {
     display: flex;
     flex-direction: column;
     padding: 1em;
+    color: var(--font);
+    transition: 0.3s ease-in-out;
 }
 
 .stats > h3, h4, h5 {
