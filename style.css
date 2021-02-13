@@ -1,9 +1,10 @@
-/*@media (prefers-color-scheme: light) {
+@media (prefers-color-scheme: light) {
     :root {
         --background: #fff;
         --foreground: rgb(240,240,240);
         --font: #282a36;
-    
+        --white: #fff;
+
         --link: #6272a4;
     }
 }
@@ -13,10 +14,11 @@
         --background: rgb(24, 26, 27);
         --foreground: rgb(32, 35, 37);
         --font: rgb(202, 198, 191);
-    
+        --white: #000;
+
         --link: #6272a4;
     }
-}*/
+}
 
 :root {
     --link: #6272a4;
@@ -366,6 +368,7 @@ footer {
     cursor: pointer;
     color: var(--font);
     background-color: var(--foreground);
+    transition: 0.3s ease-in-out;
 }
 
 .expanded-view {

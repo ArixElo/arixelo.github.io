@@ -138,35 +138,6 @@ const root = document.querySelector(':root');
 let mode = window.matchMedia('(prefers-color-scheme: dark)');
 let modeSwitch = document.getElementById("dark-mode-switch");
 
-let darkOn = "Dark mode is enabled";
-let darkOff = "Dark mode is disabled";
-
-// Set mode to either dark or light based of user OS preference
-function readMode() {
-    if (mode.matches === true ) {
-        modeSwitch.innerHTML = "dark_mode";
-        console.log(darkOn);
-    } else {
-        modeSwitch.innerHTML = "light_mode";
-        console.log(darkOff);
-    }
-
-    setColors();
-}
-
-// Allow user to change mode via switch
-function toggle() {
-    if (modeSwitch.innerHTML === "light_mode") {
-        modeSwitch.innerHTML = "dark_mode";
-        console.log(darkOn);
-    } else if (modeSwitch.innerHTML === "dark_mode") {
-        modeSwitch.innerHTML = "light_mode";
-        console.log(darkOff);
-    }
-
-    setColors();
-}
-
 // Set colors
 function setColors() {
     if (modeSwitch.innerHTML === "dark_mode") {
@@ -180,6 +151,27 @@ function setColors() {
         root.style.setProperty('--font', "#282a36");
         root.style.setProperty('--white', "#fff");
     }
+}
+setColors();
+
+// Allow user to change mode via switch
+function toggle() {
+    if (modeSwitch.innerHTML === "light_mode") {
+        modeSwitch.innerHTML = "dark_mode";
+    } else if (modeSwitch.innerHTML === "dark_mode") {
+        modeSwitch.innerHTML = "light_mode";
+    }
+    setColors();
+}
+
+// Set mode to either dark or light based of user OS preference
+function readMode() {
+    if (mode.matches === true ) {
+        modeSwitch.innerHTML = "dark_mode";
+    } else {
+        modeSwitch.innerHTML = "light_mode";
+    }
+    setColors();
 }
 
 readMode();
