@@ -83,6 +83,11 @@ var model = 0;
 
 if ($(document).width() > 1200) toggleMenu();
 
+$(".arrow-down").on('click', function(event){
+    var element = document.getElementById("downloads");
+    element.scrollIntoView();
+});
+
 swapModel(model, 1);
 
 
@@ -111,7 +116,7 @@ function swapRoms(model) {
 
     for (let i = 0; i < roms[model].length; i++) {
 
-        val = '<div class="dropdown-download"><div class="collapsed-view"><div style="margin-bottom: 1em;"><p class="rom-name-title">rom name:</p><p class="rom-name">%romname%</p></div><button class="dropdown-arrow" onclick="toggleDropdownRom(%iddropdown%)"><span class="material-icons">keyboard_arrow_down</span></button></div><div class="expanded-view" id="%iddropdowndiv%"><div id="shapeshift" class="stats"><h3>Downloads:</h3><h4><span class="ssosTotalDownloads" id="%totaldownloadsid%">%totaldownloads%</span></h4><h3>Country with most downloads:</h3><h4><span class="ssosTopGeo" id="%topgeoid%">%topgeo%</span><span class="ssosTopGeoPercent"></span></h4><h3>Operating system with most downloads:</h3><h4><span class="ssosTopOs" id="%topoperatingosid%">%topoperatingos%</span><span class="ssosTopOsPercent"></span></h4><h5>Stats updated: <span class="ssosStatsUpdated" id="%statsupdatedid%">%statsupdated%</span></h5></div></div></div>';
+        val = '<div class="dropdown-download"><div class="collapsed-view"><div style="margin-bottom: 1em;"><p class="rom-name-title">rom name:</p><p class="rom-name">%romname%</p></div><button class="dropdown-arrow" onclick="toggleDropdownRom(%iddropdown%)"><span class="material-icons">keyboard_arrow_down</span></button></div><div class="expanded-view" id="%iddropdowndiv%"><div id="shapeshift" class="stats"><h3>Downloads:</h3><h4><span class="ssosTotalDownloads" id="%totaldownloadsid%">%totaldownloads%</span></h4><h3>Country with most downloads:</h3><h4><span class="ssosTopGeo" id="%topgeoid%">%topgeo%</span><span class="ssosTopGeoPercent"></span></h4><h3>Operating system with most downloads:</h3><h4><span class="ssosTopOs" id="%topoperatingosid%">%topoperatingos%</span><span class="ssosTopOsPercent"></span></h4><h5>Stats updated: <span class="ssosStatsUpdated" id="%statsupdatedid%">%statsupdated%</span></h5><a href="%linkk%" class="download-button">Download</a></div></div></div>';
         val = val.replace("%romname%", roms[model][i]);
         val = val.replace("%iddropdown%", i);
         val = val.replace("%totaldownloadsid%", "%totaldownloadsid%" + i);
@@ -119,6 +124,8 @@ function swapRoms(model) {
         val = val.replace("%topgeoid%", "%topgeoid%" + i);
         val = val.replace("%topoperatingosid%", "%topoperatingosid%" + i);
         val = val.replace("%statsupdatedid%", "%statsupdatedid%" + i);
+
+        //%linkk% = download link;
 
         document.getElementById('downloads').innerHTML += val;
     }
@@ -166,10 +173,12 @@ function setColors() {
         root.style.setProperty('--background', 'rgb(24, 26, 27)');
         root.style.setProperty('--foreground', 'rgb(32, 35, 37)');
         root.style.setProperty('--font', "rgb(202, 198, 191)");
+        root.style.setProperty('--white', "#000");
     } else if (modeSwitch.innerHTML === "light_mode") {
         root.style.setProperty('--background', "#fff");
         root.style.setProperty('--foreground', "rgb(240,240,240)");
         root.style.setProperty('--font', "#282a36");
+        root.style.setProperty('--white', "#fff");
     }
 }
 
