@@ -94,7 +94,8 @@ nav {
     font-size: 25px;
     padding: 20px;
     color: var(--font);
-    transition: color 0.3s ease-in-out;
+    background-color: var(--foreground);
+    transition: 0.3s ease-in-out;
 }
 
 .menu-button {
