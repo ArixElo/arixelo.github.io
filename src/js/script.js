@@ -197,3 +197,5 @@ function readMode() {
 }
 
 readMode();
+
+mode.addListener(readMode);
