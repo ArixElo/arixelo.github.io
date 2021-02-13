@@ -85,7 +85,9 @@ if ($(document).width() > 1200) toggleMenu();
 
 $(".arrow-down").on('click', function(event){
     var element = document.getElementById("downloads");
-    element.scrollIntoView();
+    element.scrollIntoView({
+        behavior: 'smooth'
+    });
 });
 
 swapModel(model, 1);
