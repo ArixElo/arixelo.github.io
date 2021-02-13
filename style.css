@@ -223,6 +223,19 @@ ul li button:hover::after {
     transition: 0.2s ease-in-out;
 }
 
+.nav-link {
+    color: var(--font);
+    text-decoration: none;
+    border-bottom: 0px solid var(--background);
+    transition: border-bottom 0.3s ease-out;
+}
+
+.nav-link:hover, .nav-link:active {
+    cursor: pointer;
+    border-bottom: 1px solid var(--link);
+    transition: border-bottom 0.3s ease-in;
+}
+
 footer {
     bottom: 0;
     width: fit-content;
