@@ -320,7 +320,7 @@ footer {
     transition: 0.3s ease-in-out;
     border-radius: 50px;
     margin: 0 50px;
-    padding: 50px;
+    padding: 40px;
 }
 
 @media only screen and (max-width: 768px) {
@@ -360,6 +360,11 @@ footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.collapsed-view > div {
+    margin-top: 0.5em;
+    margin-bottom: 1em;
 }
 
 .dropdown-arrow {
