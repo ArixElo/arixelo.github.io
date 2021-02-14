@@ -46,7 +46,7 @@ let display = ["6.39 inches AMOLED", "5.00 inches AMOLED", "5.50 inches IPS", "5
 let images = ["src/img/davinci.png", "src/img/j5nlte.png", "src/img/mido.png", "src/img/prague.png"];
 
 var roms = [
-    ["ShapeShiftOS", "Extended-UI", "LegionOS", "AwakenOS", "PixelExtended", "AOSP-Extneded"],
+    ["ShapeShiftOS", "Extended-UI", "LegionOS", "AwakenOS", "PixelExtended", "AOSP-Extended"],
     ["DerpFest / AOSiP"],
     ["DerpFest", "Descendant"],
     ["AICP"]
