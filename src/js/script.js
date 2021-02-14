@@ -43,6 +43,7 @@ let shippedsoft = ["Android 9, MIUI 10", "Android 5.1 Lollipop, TouchWiz", "Andr
 let storage = ["64 GB / 128 GB", "8 GB", "32 GB / 64 GB", "16 GB / 32 GB"];
 let battery = ["4000 mAh", "2600 mAh", "4100 mAh", "3000 mAh"];
 let display = ["6.39 inches AMOLED", "5.00 inches AMOLED", "5.50 inches IPS", "5.20 inches IPS"];
+let images = ["src/img/davinci.png", "src/img/j5nlte.png", "src/img/mido.png", "src/img/prague.png"];
 
 var roms = [
     ["ShapeShiftOS", "Extended-UI", "LegionOS", "AwakenOS", "PixelExtended", "AOSP-Extneded"],
@@ -76,6 +77,7 @@ var devicesoft = document.getElementById("device-soft");
 var devicestorage = document.getElementById("device-storage");
 var devicebattery = document.getElementById("device-battery");
 var devicedisplay = document.getElementById("device-display");
+var deviceimage = document.getElementById("device-image");
 
 var downloadsContainer = document.getElementById("device-display");
 
@@ -129,6 +131,7 @@ function swapModel(number, type = 0) {
     devicestorage.innerHTML = storage[model];
     devicebattery.innerHTML = battery[model];
     devicedisplay.innerHTML = display[model];
+    deviceimage.src = images[model];
     swapRoms(model);
 }
 
