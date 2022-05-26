@@ -64,7 +64,7 @@ var dataType = [
 ];
 
 var romLinks = [
-    ["https://sourceforge.net/projects/shapeshiftos/files/davinci/stats/json?start_date=2000-01-01&end_date=2099-01-01", "http://arix.postaw.se/davinci/extendedui/", "http://arix.postaw.se/davinci/legion/", "http://arix.postaw.se/davinci/awakenos/", "http://arix.postaw.se/davinci/PixelExtended/", "http://arix.postaw.se/davinci/AEX/"],
+    ["https://sourceforge.net/projects/shapeshiftos/files/davinci/", "http://arix.postaw.se/davinci/extendedui/", "http://arix.postaw.se/davinci/legion/", "http://arix.postaw.se/davinci/awakenos/", "http://arix.postaw.se/davinci/PixelExtended/", "http://arix.postaw.se/davinci/AEX/"],
     ["arix.postaw.se/j5nlte/AOSiP"],
     ["arix.postaw.se/mido/"],
     ["arix.postaw.se/prague"],
