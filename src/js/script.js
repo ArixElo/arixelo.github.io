@@ -34,22 +34,23 @@ function toggleDropdownRom(id) {
 
 }
 
-let names = ["Xiaomi Mi 9T", "Samsung Galaxy J5 2015", "Xiaomi Redmi Note 4", "Huawei P8/P9 Lite 2017"];
-let codenames = ["davinci", "j5nlte", "mido", "prague/hi6250"];
-let cpus = ["Qualcomm Snapdragon 730, SDM730", "Qualcomm Snapdragon 410, MSM8916", "Qualcomm Snapdragon 625, MSM8953", "HiSilicon Kirin 655, Hi6250"];
-let gpus = ["Adreno 618", "Adreno 306", "Adreno 506", "Mali-T830MP2"];
-let memory = ["6 GB", "1.5 GB", "2 GB / 3 GB / 4 GB", "3 GB / 4 GB"];
-let shippedsoft = ["Android 9, MIUI 10", "Android 5.1 Lollipop, TouchWiz", "Android 6.0 Marshmallow, MIUI 8", "Android 7.0 Nougat, EMUI 5"];
-let storage = ["64 GB / 128 GB", "8 GB", "32 GB / 64 GB", "16 GB / 32 GB"];
-let battery = ["4000 mAh", "2600 mAh", "4100 mAh", "3000 mAh"];
-let display = ["6.39 inches AMOLED", "5.00 inches AMOLED", "5.50 inches IPS", "5.20 inches IPS"];
-let images = ["src/img/davinci.png", "src/img/j5nlte.png", "src/img/mido.png", "src/img/prague.png"];
+let names = ["Xiaomi Mi 9T", "Samsung Galaxy J5 2015", "Xiaomi Redmi Note 4", "Huawei P8/P9 Lite 2017", "Xiaomi Mi 11 Lite 5G"];
+let codenames = ["davinci", "j5nlte", "mido", "prague/hi6250", "renoir"];
+let cpus = ["Qualcomm Snapdragon 730, SDM730", "Qualcomm Snapdragon 410, MSM8916", "Qualcomm Snapdragon 625, MSM8953", "HiSilicon Kirin 655, Hi6250", "Qualcomm Snapdragon 780G, SM7350-AB"];
+let gpus = ["Adreno 618", "Adreno 306", "Adreno 506", "Mali-T830MP2", "Adreno 642"];
+let memory = ["6 GB", "1.5 GB", "2 GB / 3 GB / 4 GB", "3 GB / 4 GB", "6 GB/8 GB"];
+let shippedsoft = ["Android 9, MIUI 10", "Android 5.1 Lollipop, TouchWiz", "Android 6.0 Marshmallow, MIUI 8", "Android 7.0 Nougat, EMUI 5", "Android 11, MIUI 12.5"];
+let storage = ["64 GB / 128 GB", "8 GB", "32 GB / 64 GB", "16 GB / 32 GB", "128 GB/256 GB"];
+let battery = ["4000 mAh", "2600 mAh", "4100 mAh", "3000 mAh", "4250mAh"];
+let display = ["6.39 inches AMOLED", "5.00 inches AMOLED", "5.50 inches IPS", "5.20 inches IPS", "6.55 inches 90Hz AMOLED"];
+let images = ["src/img/davinci.png", "src/img/j5nlte.png", "src/img/mido.png", "src/img/prague.png", "src/img/renoir.png"];
 
 var roms = [
     ["ShapeShiftOS", "Extended-UI", "LegionOS", "AwakenOS", "PixelExtended", "AOSP-Extended"],
     ["DerpFest / AOSiP"],
     ["DerpFest", "Descendant"],
-    ["AICP"]
+    ["AICP"],
+    ["Pixel Experience"]
 ];
 
 // 0 = sf
@@ -58,14 +59,16 @@ var dataType = [
     [0, 1, 1, 1, 1, 1],
     [1],
     [1, 1],
+    [1],
     [1]
 ];
 
 var romLinks = [
-    ["https://sourceforge.net/projects/shapeshiftos/files/davinci/stats/json?start_date=2000-01-01&end_date=2099-01-01", "Extended-UI", "LegionOS", "AwakenOS", "PixelExtended", "AOSP-Extneded"],
-    ["DerpFest / AOSiP"],
-    ["DerpFest", "Descendant"],
-    ["AICP"]
+    ["https://sourceforge.net/projects/shapeshiftos/files/davinci/stats/json?start_date=2000-01-01&end_date=2099-01-01", "http://arix.postaw.se/davinci/extendedui/", "http://arix.postaw.se/davinci/legion/", "http://arix.postaw.se/davinci/awakenos/", "http://arix.postaw.se/davinci/PixelExtended/", "http://arix.postaw.se/davinci/AEX/"],
+    ["arix.postaw.se/j5nlte/AOSiP"],
+    ["arix.postaw.se/mido/"],
+    ["arix.postaw.se/prague"],
+    ["https://download.pixelexperience.org/renoir"]
 ];
 
 var devicename = document.getElementById("device-name");
@@ -141,7 +144,7 @@ function swapRoms(model) {
 
     for (let i = 0; i < roms[model].length; i++) {
 
-        val = '<div class="dropdown-download"><div class="collapsed-view" onclick="toggleDropdownRom(%iddropdown%)"><div><p class="rom-name-title">rom name:</p><p class="rom-name">%romname%</p></div><button class="dropdown-arrow"><span class="material-icons">keyboard_arrow_down</span></button></div><div class="expanded-view" id="%iddropdowndiv%"><div id="shapeshift" class="stats"><h3>Downloads:</h3><h4><span class="ssosTotalDownloads" id="%totaldownloadsid%">%totaldownloads%</span></h4><h3>Country with most downloads:</h3><h4><span class="ssosTopGeo" id="%topgeoid%">%topgeo%</span><span class="ssosTopGeoPercent"></span></h4><h3>Operating system with most downloads:</h3><h4><span class="ssosTopOs" id="%topoperatingosid%">%topoperatingos%</span><span class="ssosTopOsPercent"></span></h4><h5>Stats updated: <span class="ssosStatsUpdated" id="%statsupdatedid%">%statsupdated%</span></h5><a href="https://sourceforge.net/projects/shapeshiftos/files/davinci/" class="download-button">Download</a></div></div></div>';
+        val = '<div class="dropdown-download"><div class="collapsed-view" onclick="toggleDropdownRom(%iddropdown%)"><div><p class="rom-name-title">ROM Name:</p><p class="rom-name">%romname%</p></div><button class="dropdown-arrow"><span class="material-icons">keyboard_arrow_down</span></button></div><div class="expanded-view" id="%iddropdowndiv%"><div id="shapeshift" class="stats"><h3>Downloads:</h3><h4><span class="ssosTotalDownloads" id="%totaldownloadsid%">%totaldownloads%</span></h4><h3>Country with most downloads:</h3><h4><span class="ssosTopGeo" id="%topgeoid%">%topgeo%</span><span class="ssosTopGeoPercent"></span></h4><h3>Operating system with most downloads:</h3><h4><span class="ssosTopOs" id="%topoperatingosid%">%topoperatingos%</span><span class="ssosTopOsPercent"></span></h4><h5>Stats updated: <span class="ssosStatsUpdated" id="%statsupdatedid%">%statsupdated%</span></h5><a href="https://sourceforge.net/projects/shapeshiftos/files/davinci/" class="download-button">Download</a></div></div></div>';
         val = val.replace("%romname%", roms[model][i]);
         val = val.replace("%iddropdown%", i);
         val = val.replace("%totaldownloadsid%", "%totaldownloadsid%" + i);
