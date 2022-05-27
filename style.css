@@ -440,11 +440,12 @@ footer {
 }
 
 .download-button {
+    display: flex;
     background: var(--font);
     border: 1px solid var(--font);
     width: 120px;
-    text-align: center;
-    padding: 10px 0;
+    padding: 10px;
+    justify-content: center;
     color: var(--white);
     text-decoration: none;
     border-radius: 100px;
