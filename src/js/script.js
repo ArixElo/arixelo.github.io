@@ -145,16 +145,15 @@ function swapRoms(model) {
 
     for (let i = 0; i < roms[model].length; i++) {
 
-        val = '<div class="dropdown-download"><div class="collapsed-view" onclick="toggleDropdownRom(%iddropdown%)"><div><p class="rom-name-title">ROM Name:</p><p class="rom-name">%romname%</p></div><button class="dropdown-arrow"><span class="material-icons">keyboard_arrow_down</span></button></div><div class="expanded-view" id="%iddropdowndiv%"><div id="shapeshift" class="stats"><h3>Downloads:</h3><h4><span class="ssosTotalDownloads" id="%totaldownloadsid%">%totaldownloads%</span></h4><h3>Country with most downloads:</h3><h4><span class="ssosTopGeo" id="%topgeoid%">%topgeo%</span><span class="ssosTopGeoPercent"></span></h4><h3>Operating system with most downloads:</h3><h4><span class="ssosTopOs" id="%topoperatingosid%">%topoperatingos%</span><span class="ssosTopOsPercent"></span></h4><h5>Stats updated: <span class="ssosStatsUpdated" id="%statsupdatedid%">%statsupdated%</span></h5><a href="https://sourceforge.net/projects/shapeshiftos/files/davinci/" class="download-button">Download</a></div></div></div>';
+        val = '<div class="dropdown-download"><div class="collapsed-view" onclick="toggleDropdownRom(%iddropdown%)"><div><p class="rom-name-title">ROM Name:</p><p class="rom-name">%romname%</p></div><button class="dropdown-arrow"><span class="material-icons">keyboard_arrow_down</span></button></div><div class="expanded-view" id="%iddropdowndiv%"><a href="%linkk%" class="download-button">Download</a></div></div></div>';
         val = val.replace("%romname%", roms[model][i]);
         val = val.replace("%iddropdown%", i);
-        val = val.replace("%totaldownloadsid%", "%totaldownloadsid%" + i);
+        val = val.replace("%totaldownloadsid%",);
         val = val.replace("%iddropdowndiv%", i);
         val = val.replace("%topgeoid%", "%topgeoid%" + i);
         val = val.replace("%topoperatingosid%", "%topoperatingosid%" + i);
         val = val.replace("%statsupdatedid%", "%statsupdatedid%" + i);
-
-        //%linkk% = download link;
+        val = val.replace("%linkk%", romLinks[model][i]);
 
         document.getElementById('downloads').innerHTML += val;
     }
