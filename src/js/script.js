@@ -65,9 +65,9 @@ var dataType = [
 
 var romLinks = [
     ["https://sourceforge.net/projects/shapeshiftos/files/davinci/", "http://arix.postaw.se/davinci/extendedui/", "http://arix.postaw.se/davinci/legion/", "http://arix.postaw.se/davinci/awakenos/", "http://arix.postaw.se/davinci/PixelExtended/", "http://arix.postaw.se/davinci/AEX/"],
-    ["arix.postaw.se/j5nlte/AOSiP"],
-    ["arix.postaw.se/mido/AOSiP", "arix.postaw.se/mido/Descendant"],
-    ["arix.postaw.se/prague"],
+    ["http://arix.postaw.se/j5nlte/AOSiP"],
+    ["http://arix.postaw.se/mido/AOSiP", "http://arix.postaw.se/mido/Descendant"],
+    ["http://arix.postaw.se/prague"],
     ["https://download.pixelexperience.org/renoir"]
 ];
 
