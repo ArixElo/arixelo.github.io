@@ -46,7 +46,7 @@ let display = ["6.39 inches AMOLED", "5.00 inches AMOLED", "5.50 inches IPS", "5
 let images = ["src/img/davinci.png", "src/img/j5nlte.png", "src/img/mido.png", "src/img/prague.png", "src/img/renoir.png"];
 
 var roms = [
-    ["ShapeShiftOS", "Extended-UI", "LegionOS", "AwakenOS", "PixelExtended", "AOSP-Extended"],
+    ["ShapeShiftOS", "Extended-UI", "LegionOS", "AwakenOS", "PixelExtended", "AOSP-Extended", "tequilaOS"],
     ["DerpFest / AOSiP"],
     ["DerpFest", "Descendant"],
     ["AICP"],
@@ -56,7 +56,7 @@ var roms = [
 // 0 = sf
 // 1 = non sf
 var dataType = [
-    [0, 1, 1, 1, 1, 1],
+    [0, 1, 1, 1, 1, 1, 1],
     [1],
     [1, 1],
     [1],
@@ -64,10 +64,10 @@ var dataType = [
 ];
 
 var romLinks = [
-    ["https://sourceforge.net/projects/shapeshiftos/files/davinci/", "http://arix.postaw.se/davinci/extendedui/", "http://arix.postaw.se/davinci/legion/", "http://arix.postaw.se/davinci/awakenos/", "http://arix.postaw.se/davinci/PixelExtended/", "http://arix.postaw.se/davinci/AEX/"],
-    ["http://arix.postaw.se/j5nlte/AOSiP"],
-    ["http://arix.postaw.se/mido/AOSiP", "http://arix.postaw.se/mido/Descendant"],
-    ["http://arix.postaw.se/prague"],
+    ["https://sourceforge.net/projects/shapeshiftos/files/davinci/", "https://arix.postaw.se/davinci/extendedui/", "https://arix.postaw.se/davinci/legion/", "https://arix.postaw.se/davinci/awakenos/", "https://arix.postaw.se/davinci/PixelExtended/", "https://arix.postaw.se/davinci/AEX/", "https://tequilaos.pl/download?device=davinci"],
+    ["https://arix.postaw.se/j5nlte/AOSiP"],
+    ["https://arix.postaw.se/mido/AOSiP", "https://arix.postaw.se/mido/Descendant"],
+    ["https://arix.postaw.se/prague"],
     ["https://download.pixelexperience.org/renoir"]
 ];
 
