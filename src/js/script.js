@@ -51,7 +51,7 @@ var roms = [
     ["DerpFest", "Descendant"],
     ["AICP"],
     ["Pixel Experience"],
-    ["Not exists yet."]
+    ["FTP"]
 ];
 
 // 0 = sf
@@ -71,7 +71,7 @@ var romLinks = [
     ["https://arix.postaw.se/mido/AOSiP", "https://arix.postaw.se/mido/Descendant"],
     ["https://arix.postaw.se/prague"],
     ["https://download.pixelexperience.org/renoir"],
-    ["https://github.com/ArixElo/device_xiaomi_mondrian"]
+    ["https://arix.postaw.se/mondrian"]
 ];
 
 var devicename = document.getElementById("device-name");
